@@ -11,79 +11,93 @@
       --card-bg: #ffffff;
       --bg: #f6f8fb;
       --maxw: 900px;
-      --pad: 20px;
     }
-    html,body{height:100%;}
-    body{
-      margin:0;
-      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-      background:linear-gradient(180deg,#f8fbff 0%, #eef3ff 100%);
-      color:#111;
-      display:flex;
-      align-items:flex-start;
-      justify-content:center;
-      padding:40px 16px;
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, sans-serif;
+      background: linear-gradient(180deg, #f8fbff 0%, #eef3ff 100%);
+      color: #111;
+      display: flex;
+      justify-content: center;
+      padding: 40px 16px;
     }
-    .container{
-      max-width:var(--maxw);
-      width:100%;
-      background:var(--card-bg);
-      box-shadow:0 8px 30px rgba(20,30,80,0.08);
-      border-radius:12px;
-      padding:24px;
-      display:grid;
+    .container {
+      max-width: var(--maxw);
+      width: 100%;
+      background: var(--card-bg);
+      box-shadow: 0 8px 30px rgba(20,30,80,0.08);
+      border-radius: 12px;
+      padding: 24px;
+      display: grid;
       grid-template-columns: 1fr 320px;
-      gap:20px;
+      gap: 20px;
     }
-    header{grid-column:1 / -1; display:flex; align-items:center; justify-content:space-between; gap:16px;}
-    .name {
-      display:flex;
-      flex-direction:column;
+    header {
+      grid-column: 1 / -1;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
     }
-    .name h1{margin:0; font-size:1.6rem;}
-    .name p{margin:4px 0 0; color:var(--muted); font-size:0.95rem;}
-    .contact {text-align:right; font-size:0.95rem; color:var(--muted);}
-    .section{margin-top:6px;}
-    h2{margin:0 0 8px 0; font-size:1.05rem; color:var(--accent);}
-    p.lead{margin:0; color:#222; line-height:1.45;}
-    .two-col{display:flex; gap:12px; align-items:flex-start;}
-    .left .block{margin-bottom:14px;}
-    .right {background:#fbfdff; padding:12px; border-radius:8px; height:fit-content;}
-    .list{margin:0; padding-left:16px; color:#222;}
-    ul.compact{padding-left:18px; margin:6px 0;}
-    .job{margin-bottom:10px;}
-    .job .title{font-weight:600;}
-    .meta{font-size:0.9rem; color:var(--muted);}
-    footer{grid-column:1 / -1; margin-top:12px; text-align:center; color:var(--muted); font-size:0.85rem;}
-    @media (max-width:900px){
-      .container{grid-template-columns:1fr; padding:18px;}
-      .contact{text-align:left;}
+    .name h1 { margin: 0; font-size: 1.6rem; }
+    .name p { margin: 4px 0 0; color: var(--muted); font-size: 0.95rem; }
+    .contact { text-align: right; font-size: 0.95rem; color: var(--muted); }
+    .download-btn {
+      background: var(--accent);
+      color: white;
+      padding: 8px 14px;
+      text-decoration: none;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+    .download-btn:hover {
+      background: #3344aa;
+    }
+    h2 { color: var(--accent); font-size: 1.05rem; margin: 0 0 8px; }
+    p.lead { margin: 0; color: #222; line-height: 1.45; }
+    .block { margin-bottom: 14px; }
+    .list { margin: 0; padding-left: 16px; }
+    ul.compact { padding-left: 18px; margin: 6px 0; }
+    .job { margin-bottom: 10px; }
+    .job .title { font-weight: 600; }
+    .meta { font-size: 0.9rem; color: var(--muted); }
+    .right { background: #fbfdff; padding: 12px; border-radius: 8px; height: fit-content; }
+    footer { grid-column: 1 / -1; margin-top: 12px; text-align: center; color: var(--muted); font-size: 0.85rem; }
+    @media (max-width: 900px) {
+      .container { grid-template-columns: 1fr; padding: 18px; }
+      .contact { text-align: left; }
     }
   </style>
 </head>
 <body>
-  <main class="container" role="main" aria-label="Curriculum Vitae of Gabriel Bongailas">
+  <main class="container">
     <header>
       <div class="name">
         <h1>Gabriel Bongailas</h1>
         <p>Computer Systems & Networks — Advanced Diploma Graduate & Current B.Sc. Student</p>
       </div>
-      <div class="contact" aria-label="Contact details">
+      <div class="contact">
         <div>Malta</div>
         <div>+356 7968 3934</div>
         <div><a href="mailto:bongailas@proton.me">bongailas@proton.me</a></div>
+        <div style="margin-top:8px;">
+          <a href="Latest_CV.pdf" class="download-btn" download>⬇ Download CV (PDF)</a>
+        </div>
       </div>
     </header>
 
-    <section class="left">
-      <div class="block section" id="profile">
+    <!-- LEFT COLUMN -->
+    <section>
+      <div class="block" id="profile">
         <h2>Profile</h2>
         <p class="lead">
-          Advanced diploma graduate and current bachelor’s student in Computer Systems and Networks, with practical experience in IT infrastructure, troubleshooting, and system deployment. Aiming to apply analytical and organisational skills in roles focusing on design, implementation, and optimisation of enterprise networks. Enthusiastic about contributing IT knowledge while pursuing opportunities for growth.
+          Advanced diploma graduate and current bachelor’s student in Computer Systems and Networks, with practical experience in IT infrastructure, troubleshooting, and system deployment. Aiming to apply my analytical and organisational skills in positions focusing on the design, implementation, and optimisation of enterprise networks. Enthusiastic about contributing my IT knowledge to a forward-thinking team, while also seeking opportunities for further growth and learning.
         </p>
       </div>
 
-      <div class="block section" id="experience">
+      <div class="block" id="experience">
         <h2>Professional Experience</h2>
 
         <div class="job">
@@ -112,7 +126,7 @@
         </div>
       </div>
 
-      <div class="block section" id="education">
+      <div class="block" id="education">
         <h2>Education</h2>
         <div class="job">
           <div class="title">B.Sc. (Hons) in Computer Systems and Networks — MCAST</div>
@@ -124,7 +138,7 @@
         </div>
       </div>
 
-      <div class="block section" id="projects">
+      <div class="block" id="projects">
         <h2>Personal Projects & Home Lab</h2>
         <ul class="compact">
           <li>Home Server: Proxmox, NextCloud, pfSense</li>
@@ -132,7 +146,7 @@
         </ul>
       </div>
 
-      <div class="block section" id="voluntary">
+      <div class="block" id="voluntary">
         <h2>Voluntary</h2>
         <div class="job">
           <div class="title">Inspire Charity Shop</div>
@@ -142,8 +156,9 @@
       </div>
     </section>
 
-    <aside class="right" aria-label="Sidebar">
-      <div class="section" id="skills">
+    <!-- RIGHT COLUMN -->
+    <aside class="right">
+      <div id="skills">
         <h2>Skills</h2>
         <ul class="list">
           <li>Windows Server configuration & management</li>
@@ -154,7 +169,7 @@
         </ul>
       </div>
 
-      <div class="section" id="interests">
+      <div id="interests">
         <h2>Interests</h2>
         <ul class="list">
           <li>Analogue photography</li>
