@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Gabriel Bongailas — CV</title>
+  <style>
+    :root {
+      --accent: #5563DE;
+      --muted: #666;
+      --card-bg: #ffffff;
+      --bg: #f6f8fb;
+      --maxw: 900px;
+      --pad: 20px;
+    }
+    html,body{height:100%;}
+    body{
+      margin:0;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background:linear-gradient(180deg,#f8fbff 0%, #eef3ff 100%);
+      color:#111;
+      display:flex;
+      align-items:flex-start;
+      justify-content:center;
+      padding:40px 16px;
+    }
+    .container{
+      max-width:var(--maxw);
+      width:100%;
+      background:var(--card-bg);
+      box-shadow:0 8px 30px rgba(20,30,80,0.08);
+      border-radius:12px;
+      padding:24px;
+      display:grid;
+      grid-template-columns: 1fr 320px;
+      gap:20px;
+    }
+    header{grid-column:1 / -1; display:flex; align-items:center; justify-content:space-between; gap:16px;}
+    .name {
+      display:flex;
+      flex-direction:column;
+    }
+    .name h1{margin:0; font-size:1.6rem;}
+    .name p{margin:4px 0 0; color:var(--muted); font-size:0.95rem;}
+    .contact {text-align:right; font-size:0.95rem; color:var(--muted);}
+    .section{margin-top:6px;}
+    h2{margin:0 0 8px 0; font-size:1.05rem; color:var(--accent);}
+    p.lead{margin:0; color:#222; line-height:1.45;}
+    .two-col{display:flex; gap:12px; align-items:flex-start;}
+    .left .block{margin-bottom:14px;}
+    .right {background:#fbfdff; padding:12px; border-radius:8px; height:fit-content;}
+    .list{margin:0; padding-left:16px; color:#222;}
+    ul.compact{padding-left:18px; margin:6px 0;}
+    .job{margin-bottom:10px;}
+    .job .title{font-weight:600;}
+    .meta{font-size:0.9rem; color:var(--muted);}
+    footer{grid-column:1 / -1; margin-top:12px; text-align:center; color:var(--muted); font-size:0.85rem;}
+    @media (max-width:900px){
+      .container{grid-template-columns:1fr; padding:18px;}
+      .contact{text-align:left;}
+    }
+  </style>
+</head>
+<body>
+  <main class="container" role="main" aria-label="Curriculum Vitae of Gabriel Bongailas">
+    <header>
+      <div class="name">
+        <h1>Gabriel Bongailas</h1>
+        <p>Computer Systems & Networks — Advanced Diploma Graduate & Current B.Sc. Student</p>
+      </div>
+      <div class="contact" aria-label="Contact details">
+        <div>Malta</div>
+        <div>+356 7968 3934</div>
+        <div><a href="mailto:bongailas@proton.me">bongailas@proton.me</a></div>
+      </div>
+    </header>
+
+    <section class="left">
+      <div class="block section" id="profile">
+        <h2>Profile</h2>
+        <p class="lead">
+          Advanced diploma graduate and current bachelor’s student in Computer Systems and Networks, with practical experience in IT infrastructure, troubleshooting, and system deployment. Aiming to apply analytical and organisational skills in roles focusing on design, implementation, and optimisation of enterprise networks. Enthusiastic about contributing IT knowledge while pursuing opportunities for growth.
+        </p>
+      </div>
+
+      <div class="block section" id="experience">
+        <h2>Professional Experience</h2>
+
+        <div class="job">
+          <div class="title">Junior IT Support Officer — PG Group</div>
+          <div class="meta">06/2022 — Present</div>
+          <ul class="compact">
+            <li>Installed, configured and managed IT assets for 100+ employees; minimised downtime and ensured smooth operations.</li>
+            <li>Provided support for O365, Accounts, CRM and POS systems to staff including senior management.</li>
+            <li>Resolved user requests via walk-ins, calls and ticketing; maintained clear communication and documentation.</li>
+            <li>Configured network equipment including Dell and Aruba switches.</li>
+            <li>Diagnosed and repaired basic faults on electronic devices (amplifiers, TVs).</li>
+            <li>Developed a Linux-based infotainment system (Ubuntu + Webmin) for Ragusa Xpress and PG Group.</li>
+            <li>Installed and configured 4G marine router (Sputnik24) for a catamaran.</li>
+            <li>Designed and 3D printed custom parts for specialised applications.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="title">IT Apprentice — Ministry for National Heritage, Arts & Local Council</div>
+          <div class="meta">02/2022 — 05/2022</div>
+          <ul class="compact">
+            <li>Configured and deployed computers to the government domain.</li>
+            <li>Set up and maintained visitor-access computers for public use.</li>
+            <li>Researched and implemented open-source solutions to optimise workflows within budget constraints.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="block section" id="education">
+        <h2>Education</h2>
+        <div class="job">
+          <div class="title">B.Sc. (Hons) in Computer Systems and Networks — MCAST</div>
+          <div class="meta">10/2023 — Present</div>
+        </div>
+        <div class="job">
+          <div class="title">Advanced Diploma in IT (Computer Systems & Networks) — MCAST</div>
+          <div class="meta">10/2021 — 06/2023</div>
+        </div>
+      </div>
+
+      <div class="block section" id="projects">
+        <h2>Personal Projects & Home Lab</h2>
+        <ul class="compact">
+          <li>Home Server: Proxmox, NextCloud, pfSense</li>
+          <li>Home NAS: TrueNAS Scale</li>
+        </ul>
+      </div>
+
+      <div class="block section" id="voluntary">
+        <h2>Voluntary</h2>
+        <div class="job">
+          <div class="title">Inspire Charity Shop</div>
+          <div class="meta">Voluntary</div>
+          <p class="lead">Assisted with organising, cleaning and sorting items; handled customer enquiries and payments.</p>
+        </div>
+      </div>
+    </section>
+
+    <aside class="right" aria-label="Sidebar">
+      <div class="section" id="skills">
+        <h2>Skills</h2>
+        <ul class="list">
+          <li>Windows Server configuration & management</li>
+          <li>Cisco device configuration & management</li>
+          <li>Basic Linux OS configuration & management</li>
+          <li>Office applications (proficient)</li>
+          <li>SQL — configuration & management</li>
+        </ul>
+      </div>
+
+      <div class="section" id="interests">
+        <h2>Interests</h2>
+        <ul class="list">
+          <li>Analogue photography</li>
+          <li>Analogue audio</li>
+          <li>Electronics</li>
+          <li>Kayaking</li>
+        </ul>
+      </div>
+    </aside>
+
+    <footer>
+      © 2025 Gabriel Bongailas — Curriculum Vitae
+    </footer>
+  </main>
+</body>
+</html>
