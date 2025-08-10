@@ -1,0 +1,16 @@
+[
+  {
+    "id": "infotainment",
+    "title": "Linux-based Infotainment System",
+    "timePeriod": "2023",
+    "description": "A Linux-based media/infotainment deployment for supermarket displays and marine vessel infotainment.",
+    "file": "infotainment.html"
+  },
+  {
+    "id": "home-server",
+    "title": "Home Server & NAS",
+    "timePeriod": "2024",
+    "description": "Personal homelab using Proxmox, TrueNAS Scale, and pfSense for networking.",
+    "file": "home-server.html"
+  }
+]

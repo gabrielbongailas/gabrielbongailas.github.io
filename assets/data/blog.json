@@ -1,0 +1,16 @@
+[
+  {
+    "id": "powershell-backup",
+    "title": "Automating Backups with PowerShell",
+    "date": "2025-02-10",
+    "description": "A short guide to scheduling and scripting backups on Windows servers.",
+    "file": "powershell-backup.html"
+  },
+  {
+    "id": "network-hardening",
+    "title": "Small Office Network Hardening Tips",
+    "date": "2024-11-15",
+    "description": "Practical steps to improve the security of a small office network.",
+    "file": "network-hardening.html"
+  }
+]

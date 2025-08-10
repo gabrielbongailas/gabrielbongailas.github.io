@@ -1,0 +1,34 @@
+[
+  {
+    "companyLogo": "assets/img/project1.svg",
+    "jobTitle": "Junior IT Support Officer",
+    "companyName": "PG Group",
+    "timePeriod": "06/2022 \u2014 Present",
+    "description": [
+      "Install, configure, and manage IT assets for 100+ employees.",
+      "Provide IT support for O365, Accounts, CRM, POS systems.",
+      "Configure Dell and Aruba switches.",
+      "Developed Linux-based infotainment system (Ubuntu, Webmin)."
+    ],
+    "gallery": [
+      "assets/img/project1.svg",
+      "assets/img/project2.svg"
+    ],
+    "projectLinks": [
+      "infotainment"
+    ]
+  },
+  {
+    "companyLogo": "assets/img/project2.svg",
+    "jobTitle": "IT Apprentice",
+    "companyName": "Ministry for National Heritage, Arts & Local Council",
+    "timePeriod": "02/2022 \u2014 05/2022",
+    "description": [
+      "Configured and deployed computers to the government domain.",
+      "Set up and maintained visitor-access computers.",
+      "Researched and implemented open-source solutions to optimise workflows."
+    ],
+    "gallery": [],
+    "projectLinks": []
+  }
+]
