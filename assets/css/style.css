@@ -1,5 +1,9 @@
 
 :root{--bg:#FAFAFA;--card:#FFF;--text:#222;--accent:#0071E3}
+/* If the browser prefers dark and JS is unavailable, provide a CSS-only fallback */
+@media (prefers-color-scheme: dark) {
+  :root{--bg:#111;--card:#1E1E1E;--text:#EDEDED;--accent:#4CAFFF}
+}
 [data-theme="dark"]{--bg:#111;--card:#1E1E1E;--text:#EDEDED;--accent:#4CAFFF}
 *{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;background:var(--bg);color:var(--text);transition:background .25s,color .25s}
 header{background:var(--card);position:sticky;top:0;z-index:40;border-bottom:1px solid rgba(0,0,0,0.04)}
