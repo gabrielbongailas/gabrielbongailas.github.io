@@ -3,19 +3,20 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>About — Minimal</title>
+  <title>Gabriel Bongailas</title>
   <meta name="description" content="Short about me one-page — minimal template">
   <style>
     /* Color system: define light defaults and let dark override via prefers-color-scheme */
     :root{
-      --bg: #ffffff;
-      --card: #f8fafc;
-      --bg-alt: #f2f2f2;
-      --text: #111827;
-      --muted: #6b7280;
-      --accent: #b30000;
-      --accent-rgb: 179,0,0; /* for tag tinting */
-      --accent-2: #60a5fa;
+    	--bg: #ffffff;
+      	--card: #f8fafc;
+      	--bg-alt: #f2f2f2;
+      	--text: #111827;
+      	--muted: #6b7280;
+    	--accent: #b30000;
+    	--accent-rgb: 179,0,0; /* for tag tinting */
+    	--accent-grey: #888888;
+    --accent-2: #888888; /* use grey for gradients */
     }
 
     @media (prefers-color-scheme: dark) {
@@ -24,17 +25,16 @@
         --card: #1a1a1a;
         --bg-alt: #111111;
         --text: #f5f5f5;
-        --muted: #9ca3af;
         --accent: #ff2a2a;
-        --accent-rgb: 255,42,42; /* darker red in dark mode */
-        /* remove green: keep accent-2 blue in dark mode as well */
-        --accent-2: #60a5fa;
+        --accent-rgb: #781414; /* darker red in dark mode */
+        --accent-grey: #bbbbbb;
+        --accent-2: #bbbbbb; /* use grey for gradients in dark mode */
       }
     }
 
     *{box-sizing:border-box}
     body{
-      margin:0;
+      background:linear-gradient(135deg,var(--accent-grey),var(--accent));
       font-family: Inter, ui-sans-serif, system-ui, "Segoe UI", Roboto, -apple-system, Arial, sans-serif;
       line-height:1.5;
       background:var(--bg);
@@ -52,7 +52,6 @@
       background:var(--card);
       padding:36px;
       border-radius:12px;
-      box-shadow:0 6px 30px rgba(16,24,40,0.06);
       position:relative;
       z-index:1;
     }
@@ -63,14 +62,15 @@
       position:absolute;
       inset:-18px;
       border-radius:inherit;
-      background:linear-gradient(90deg,var(--accent),var(--accent-2));
+      background:var(--accent);
       filter:blur(28px);
       opacity:0.10;
       z-index:-1;
       pointer-events:none;
     }
+	
     header{display:flex;gap:20px;align-items:center}
-    .avatar{width:96px;height:96px;border-radius:12px;background:linear-gradient(135deg,var(--accent-2),var(--accent));display:flex;align-items:center;justify-content:center;font-weight:700;color:#fff}
+    .avatar{width:96px;height:96px;border-radius:12px;background:var(--accent);display:flex;align-items:center;justify-content:center;font-weight:700;color:#fff}
 
     h1{margin:0;font-size:1.6rem}
     p.lead{color:var(--muted);margin:8px 0 20px}
@@ -85,9 +85,11 @@
       background:var(--bg-alt);
     }
 
-  .tags{display:flex;flex-wrap:wrap;gap:8px}
+  .tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:32px}
   /* rounded-rectangle tags for skills: slightly tinted with accent for better visibility */
-  .tag{background:rgba(var(--accent-rgb),0.08);padding:8px 12px;border-radius:10px;font-size:0.85rem;color:var(--text);font-weight:600}
+  .tag{background:#781414;padding:8px 12px;border-radius:10px;font-size:0.85rem;color:#f5f5f5;;font-weight:600}
+
+  .period{background:#781414;padding:8px 12px;border-radius:10px;font-size:0.85rem;color:#f5f5f5;;font-weight:600}
 
     footer{display:flex;gap:12px;justify-content:flex-end;margin-top:10px}
     a.btn{background:var(--accent);color:#fff;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:600}
@@ -99,13 +101,50 @@
   @keyframes blink{50%{opacity:0}}
 
   /* tighten headings inside sections */
-  .section h2{margin-top:0;margin-bottom:8px;font-size:1.05rem}
+  .section h2{margin-top:0;margin-bottom:8px;font-size:1.2rem}
   .section h3{margin-top:0;margin-bottom:6px}
+
+  /* reduce spacing below section text */
+  .section p{margin:0 0 8px 0}
+  .section ul{margin:0;padding-left:20px}
+  .section li{margin-bottom:4px}
 
     section{background:var(--card);padding:24px;border-radius:12px;margin-bottom:20px}
 
     a{color:var(--accent);text-decoration:none}
     a:hover{opacity:.9}
+
+    /* Mobile responsive design */
+    @media (max-width:768px){
+      .card{
+        padding:24px;
+        border-radius:8px;
+      }
+      header{flex-direction:column;align-items:flex-start;gap:16px}
+      .avatar{width:80px;height:80px;font-size:0.9rem}
+      h1{font-size:1.3rem}
+      p.lead{font-size:0.9rem}
+      .section{padding:12px;margin-bottom:12px}
+      .tag{padding:6px 10px;font-size:0.8rem}
+      .period{padding:6px 10px;font-size:0.8rem}
+      .tags{margin-bottom:24px}
+      footer{justify-content:flex-start}
+    }
+
+    @media (max-width:480px){
+      body{padding:12px}
+      .card{padding:16px}
+      header{flex-direction:column;align-items:flex-start;gap:12px}
+      .avatar{width:64px;height:64px}
+      h1{font-size:1.2rem}
+      p.lead{font-size:0.85rem;margin:4px 0 12px}
+      .section{padding:10px;margin-bottom:10px}
+      .section h2{font-size:0.95rem;margin-bottom:6px}
+      .section h3{font-size:0.9rem}
+      .tag{padding:5px 8px;font-size:0.75rem}
+      .period{padding:4px 8px;font-size:0.75rem}
+      .tags{gap:6px;margin-bottom:16px}
+    }
   </style>
 </head>
 <body>
@@ -153,18 +192,18 @@
 
       <section class="section">
         <h2>Contact</h2>
-        <p>Email: <a href="mailto:you@example.com">you@example.com</a></p>
-        <p>LinkedIn: <a href="#">Your LinkedIn</a></p>
+        <p>Email: <a href="mailto:gabriel@bongailas.mt">gabriel@bongailas.mt</a></p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/gabrielbongailas/" target="_blank">Your LinkedIn</a></p>
       </section>
     </main>
 
     <footer></footer>
 
-    <section id="experience" class="section" style="margin-top:40px">
+  <section id="experience" class="section" style="margin-top:16px">
       <h2>Experience</h2>
       <div class="section">
         <h3>Junior IT Assistant — MFSA (IT Governance & Planning)</h3>
-        <p><em>15/09/2025 – Present</em></p>
+  <p><span class="period">15/09/2025 – Present</span></p>
         <ul>
           <li>Website vulnerability testing using UpGuard, ImmuniWeb, OpenVAS, and Nmap</li>
           <li>Network monitoring and anomaly detection using DarkTrace</li>
@@ -175,7 +214,7 @@
 
       <div class="section">
         <h3>Junior IT Support Officer — PG plc.</h3>
-        <p><em>06/06/2022 – 12/09/2025</em></p>
+  <p><span class="period">06/06/2022 – 12/09/2025</span></p>
         <ul>
           <li>Active Directory administration and user lifecycle management</li>
           <li>Powershell scripting and automation for operational tasks</li>
