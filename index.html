@@ -1,42 +1,207 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Gabriel Bongailas - Portfolio</title><link rel="stylesheet" href="assets/css/style.css"></head><body><header>
-  <nav class="navbar">
-    <div class="logo">Gabriel Bongailas</div>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="experience.html">Experience</a></li>
-      <li><a href="projects.html">Projects</a></li>
-      <li><a href="gallery.html">Gallery</a></li>
-      <li><a href="blog.html">Blog</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-		<div>
-			<span id="menu-toggle" class="menu-toggle">☰</span>
-		</div>
-  </nav>
-</header>
-	<section class="hero">
-		<div class="slideshow">
-		</div">
-		<div class="hero-content">
-			<h1>Hi, I'm 
-				<span>Gabriel Bongailas</span>
-			</h1>
-			<p>IT Systems Administrator | Network Engineer | Problem Solver</p>
-			<a class="btn" href="assets/docs/cv.pdf" target="_blank">View My CV</a>
-		</div>
-	
-	</section>
-	 <main class="container">
-		<div class="card">
-			<h2>Featured Project</h2>
-			<p>Linux-based Infotainment System — <a href="projects.html#infotainment">details</a></p>
-		</div>
-		<div class="card">
-			<h2>Latest Blog</h2>
-			<p><a href="blog.html">Read my posts</a></p>
-		</div>
-	</main> 
-<script src="assets/js/main.js"></script>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>About — Minimal</title>
+  <meta name="description" content="Short about me one-page — minimal template">
+  <style>
+    /* Color system: define light defaults and let dark override via prefers-color-scheme */
+    :root{
+      --bg: #ffffff;
+      --card: #f8fafc;
+      --bg-alt: #f2f2f2;
+      --text: #111827;
+      --muted: #6b7280;
+      --accent: #b30000;
+      --accent-rgb: 179,0,0; /* for tag tinting */
+      --accent-2: #60a5fa;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root{
+        --bg: #0e0e0e;
+        --card: #1a1a1a;
+        --bg-alt: #111111;
+        --text: #f5f5f5;
+        --muted: #9ca3af;
+        --accent: #ff2a2a;
+        --accent-rgb: 255,42,42; /* darker red in dark mode */
+        /* remove green: keep accent-2 blue in dark mode as well */
+        --accent-2: #60a5fa;
+      }
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: Inter, ui-sans-serif, system-ui, "Segoe UI", Roboto, -apple-system, Arial, sans-serif;
+      line-height:1.5;
+      background:var(--bg);
+      color:var(--text);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      min-height:100vh;
+      padding:24px;
+    }
+
+    .card{
+      max-width:880px;
+      width:100%;
+      background:var(--card);
+      padding:36px;
+      border-radius:12px;
+      box-shadow:0 6px 30px rgba(16,24,40,0.06);
+      position:relative;
+      z-index:1;
+    }
+
+    /* soft colored glow/blur behind the card */
+    .card::before{
+      content:"";
+      position:absolute;
+      inset:-18px;
+      border-radius:inherit;
+      background:linear-gradient(90deg,var(--accent),var(--accent-2));
+      filter:blur(28px);
+      opacity:0.10;
+      z-index:-1;
+      pointer-events:none;
+    }
+    header{display:flex;gap:20px;align-items:center}
+    .avatar{width:96px;height:96px;border-radius:12px;background:linear-gradient(135deg,var(--accent-2),var(--accent));display:flex;align-items:center;justify-content:center;font-weight:700;color:#fff}
+
+    h1{margin:0;font-size:1.6rem}
+    p.lead{color:var(--muted);margin:8px 0 20px}
+
+    .grid{display:grid;grid-template-columns:1fr 300px;gap:28px}
+
+    /* use .section consistently */
+    .section{
+      margin-bottom:14px;
+      padding:16px; /* reduced padding to tighten vertical rhythm */
+      border-radius:10px;
+      background:var(--bg-alt);
+    }
+
+  .tags{display:flex;flex-wrap:wrap;gap:8px}
+  /* rounded-rectangle tags for skills: slightly tinted with accent for better visibility */
+  .tag{background:rgba(var(--accent-rgb),0.08);padding:8px 12px;border-radius:10px;font-size:0.85rem;color:var(--text);font-weight:600}
+
+    footer{display:flex;gap:12px;justify-content:flex-end;margin-top:10px}
+    a.btn{background:var(--accent);color:#fff;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:600}
+
+    @media (max-width:780px){.grid{grid-template-columns:1fr}header{flex-direction:row}footer{justify-content:center}}
+
+  /* typing cursor: single blinking cursor, uses accent (red) */
+  .cursor{display:inline-block;color:var(--accent);margin-left:6px;padding-left:6px;animation:blink .8s steps(1) infinite}
+  @keyframes blink{50%{opacity:0}}
+
+  /* tighten headings inside sections */
+  .section h2{margin-top:0;margin-bottom:8px;font-size:1.05rem}
+  .section h3{margin-top:0;margin-bottom:6px}
+
+    section{background:var(--card);padding:24px;border-radius:12px;margin-bottom:20px}
+
+    a{color:var(--accent);text-decoration:none}
+    a:hover{opacity:.9}
+  </style>
+</head>
+<body>
+  <article class="card">
+    <header>
+      <div class="avatar">GB</div>
+      <div>
+  <h1 class="text-5xl font-bold mb-4"><span id="typed-name"></span></h1>
+        <p class="lead">Student in IT — Computer Systems & Networks. Cybersecurity enthusiast. Film photography & vinyl audio fan.</p>
+        <div class="tags">
+          <span class="tag">Networking</span>
+          <span class="tag">Linux</span>
+          <span class="tag">Embedded Systems</span>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="section">
+        <h2>About</h2>
+        <p>I build practical systems with reliable design: self-hosting services, lightweight monitoring tools, and embedded sensing projects. I value integrity, respect and humility and prefer simple, maintainable solutions.</p>
+      </section>
+
+      <section class="section">
+        <h2>Skills</h2>
+        <div class="tags">
+          <span class="tag">Proxmox</span>
+          <span class="tag">NAS</span>
+          <span class="tag">ESP32</span>
+          <span class="tag">Soldering</span>
+          <span class="tag">Woodworking</span>
+        </div>
+      </section>
+
+      <!-- removed small duplicate Experience block to avoid duplication with detailed section below -->
+
+      <section class="section">
+        <h2>Projects</h2>
+        <ul>
+          <li>LoRa-based Noise Monitoring (ESP32-C3)</li>
+          <li>Proxmox + NAS homelab</li>
+          <li>Passive monitor speaker build</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Contact</h2>
+        <p>Email: <a href="mailto:you@example.com">you@example.com</a></p>
+        <p>LinkedIn: <a href="#">Your LinkedIn</a></p>
+      </section>
+    </main>
+
+    <footer></footer>
+
+    <section id="experience" class="section" style="margin-top:40px">
+      <h2>Experience</h2>
+      <div class="section">
+        <h3>Junior IT Assistant — MFSA (IT Governance & Planning)</h3>
+        <p><em>15/09/2025 – Present</em></p>
+        <ul>
+          <li>Website vulnerability testing using UpGuard, ImmuniWeb, OpenVAS, and Nmap</li>
+          <li>Network monitoring and anomaly detection using DarkTrace</li>
+          <li>Policy and guideline drafting for internal IT processes</li>
+          <li>Custom Linux-based security setups, including rogue access-point simulations via pfSense</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h3>Junior IT Support Officer — PG plc.</h3>
+        <p><em>06/06/2022 – 12/09/2025</em></p>
+        <ul>
+          <li>Active Directory administration and user lifecycle management</li>
+          <li>Powershell scripting and automation for operational tasks</li>
+          <li>Linux administration and Bash scripting for maintenance and deployments</li>
+          <li>Electronics repair and 3D printing design for internal hardware needs</li>
+          <li>Network cable termination, routing, and equipment setup</li>
+          <li>Custom Linux infotainment system deployed and managed via Webmin</li>
+        </ul>
+      </div>
+    </section>
+  </article>
+
+  <script>
+const text = "Gabriel Bongailas";
+let i = 0;
+const el = document.getElementById("typed-name");
+function type() {
+  if (i < text.length) {
+    el.innerHTML = text.substring(0, i+1) + '<span class="cursor">|</span>';
+    i++;
+    setTimeout(type, 120);
+  } else {
+    el.innerHTML = text + '<span class="cursor blink">|</span>';
+  }
+}
+type();
+</script>
 </body>
 </html>
